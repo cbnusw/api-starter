@@ -1,0 +1,1 @@
+exports.createSchema = require('./schema');

@@ -1,0 +1,36 @@
+{
+  "name": "api-starter",
+  "version": "1.0.0",
+  "description": "RESTful API Server starter",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx pm2 start pm2/pm2.config.js",
+    "stop": "npx pm2 del api-server",
+    "restart": "npx npm-run-all --sequential stop start",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "RESTful",
+    "API"
+  ],
+  "author": "Kwang-Mo Ahn <ahnmo777@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "http-errors": "^1.8.0",
+    "moment-timezone": "^0.5.32",
+    "mongoose": "^5.11.13",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "pm2": "^4.5.1"
+  }
+}
