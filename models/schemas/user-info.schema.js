@@ -4,31 +4,38 @@ const { searchPlugin } = require('./plugins');
 const { toRegEx } = require('./mapper');
 
 const schema = createSchema({
-  title: {
+  name: {
     type: String,
-    trim: true,
     required: true,
+    trim: true,
     index: true,
   },
-  content: {
+  email: {
     type: String,
     required: true,
+    trim: true,
+    lowercase: true,
+    unique: true,
   },
-  writer: {
-    type: Schema.Types.ObjectId,
-    ref: 'UserInfo',
+  phone: {
+    type: String,
     required: true,
+    trim: true,
+    unique: true,
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+    index: true,
   }
 });
 
-schema.index({ createdAt: -1 });
-
 schema.plugin(searchPlugin({
-  populate: [{ path: 'writer', select: 'name' }],
+  sort: 'name',
   mapper: {
-    title: toRegEx
-  },
-  sort: '-createdAt'
+    name: toRegEx,
+  }
 }));
 
 module.exports = schema;

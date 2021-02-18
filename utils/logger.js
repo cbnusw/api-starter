@@ -1,6 +1,6 @@
-const { join } = require('path');
 const winston = require('winston');
 const moment = require('moment-timezone');
+const { join } = require('path');
 require('winston-daily-rotate-file');
 const { LOG_LEVEL, IS_DEV } = require('../env');
 

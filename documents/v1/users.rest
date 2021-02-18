@@ -1,0 +1,16 @@
+###
+# 인증서버를 통해 관리자로 로그인
+POST http://localhost:3000/operator/login
+Content-Type: application/json
+
+{
+  "email": "admin@domain.com",
+  "password": "asdf1234"
+}
+
+
+###
+# 회원 정보 가져오기
+GET http://localhost:5001/v1/users/members?limit=10&page=1
+x-access-token: <관리자로 로그인하여 발급 받은 access token 입력>
+

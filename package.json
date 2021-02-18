@@ -7,7 +7,7 @@
     "start": "npx pm2 start pm2/pm2.config.js",
     "stop": "npx pm2 del api-server",
     "restart": "npx npm-run-all --sequential stop start",
-    "dev": "nodemon index.js"
+    "dev": "npx nodemon index.js"
   },
   "keywords": [
     "RESTful",
@@ -16,6 +16,7 @@
   "author": "Kwang-Mo Ahn <ahnmo777@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
